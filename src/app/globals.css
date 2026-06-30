@@ -1,26 +1,110 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (toggle), not prefers-color-scheme. Tailwind v4 syntax. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* knorii brand palette. Light mode is the brand reference; dark mode uses
+   equivalent tokens from the same families. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f3f2e7; /* oatmeal */
+  --foreground: #1f2a2e; /* body ink */
+  --heading: #2c5560; /* headline teal */
+  --muted: #6a7378; /* muted teal-grey */
+  --accent: #c49a4a; /* gold */
+  --link: #c49a4a; /* link hover gold */
+  --card: #fbfaf1; /* warm card */
+  --border: #dddbc8; /* oatmeal border */
+  --brick: #6e4f35; /* knorii brown — favourites cards */
+}
+
+.dark {
+  --background: #1a2326; /* deep teal-ink */
+  --foreground: #e9e7d9; /* light oatmeal */
+  --heading: #7fb2bd; /* lighter teal */
+  --muted: #8f9a9d;
+  --accent: #d8b36c; /* lighter gold */
+  --link: #d8b36c;
+  --card: #232d30;
+  --border: #354042;
+  --brick: #8a6648; /* lighter brick */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-heading: var(--heading);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-link: var(--link);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-brick: var(--brick);
+  --font-sans: var(--font-instrument);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-jetbrains);
+  --font-handwritten: var(--font-kaushan), var(--font-zhimang), cursive;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-instrument), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Typewriter caret */
+@keyframes caret-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.caret {
+  animation: caret-blink 1.05s step-end infinite;
+}
+
+/* Hand-drawn circle: draw the stroke on hover/focus */
+.circle-link svg path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  transition: stroke-dashoffset 0.55s ease;
+}
+.circle-link:hover svg path,
+.circle-link:focus-visible svg path {
+  stroke-dashoffset: 0;
+}
+
+/* Decorative page-peel corner */
+.page-peel-fold {
+  background: linear-gradient(135deg, transparent 50%, var(--card) 50%);
+  box-shadow: -3px -3px 8px rgb(0 0 0 / 0.13);
+  transition:
+    width 0.25s ease,
+    height 0.25s ease;
+}
+.page-peel:hover .page-peel-fold {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+/* Dark mode only: soften the headshot's faint watercolour edge so the
+   transparent PNG shows no white halo on the dark background. */
+.dark .headshot-defringe {
+  filter: url(#headshot-defringe);
+}
+
+/* Accessibility: honour reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
