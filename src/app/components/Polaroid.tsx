@@ -3,12 +3,13 @@ import Image from "next/image";
 import type { Season } from "@/lib/favourites";
 import { splitCjk } from "@/lib/cjk";
 
-// Season colour carried as the duct-tape accent band.
-const TAPE: Record<Season, string> = {
-  spring: "#e8a0bf",
-  summer: "#7ca82b",
-  autumn: "#d2691e",
-  winter: "#a8c8d8",
+// Per season: the duct-tape accent colour, and a season-tinted cream for the
+// photo well of title-only cards.
+const SEASON: Record<Season, { tape: string; well: string }> = {
+  spring: { tape: "#e8a0bf", well: "#eddcd8" },
+  summer: { tape: "#7ca82b", well: "#dadebe" },
+  autumn: { tape: "#d2691e", well: "#ecd6c0" },
+  winter: { tape: "#a8c8d8", well: "#e1e6e3" },
 };
 
 // Render text with CJK runs in the hero brush font, scaled ~1.2x for an
@@ -70,12 +71,16 @@ export default function Polaroid({
       >
         <span
           className="absolute inset-x-0 bottom-0 h-[6px]"
-          style={{ backgroundColor: TAPE[season] }}
+          style={{ backgroundColor: SEASON[season].tape }}
         />
       </span>
 
-      {/* Photo well: a poster image if provided, otherwise the centred title. */}
-      <div className="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[1px] bg-[#eee9dd] px-3">
+      {/* Photo well: an image if provided, otherwise the centred title on the
+          season-tinted cream fill. */}
+      <div
+        className="relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-[1px] px-3"
+        style={{ backgroundColor: SEASON[season].well }}
+      >
         {image ? (
           <Image
             src={image}
