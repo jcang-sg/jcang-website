@@ -20,11 +20,11 @@ export default function FavouritesPage() {
       </nav>
 
       <header>
-        <h1 className="font-handwritten text-5xl text-heading sm:text-6xl">
+        <h1 className="font-handwritten text-3xl text-heading sm:text-5xl lg:text-6xl">
           Favourites
         </h1>
         <p className="mt-3 text-lg leading-relaxed">
-          A few things I&apos;ve loved over the years, in order.
+          Stories I&apos;ve loved over the years.
         </p>
       </header>
 

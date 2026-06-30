@@ -26,10 +26,15 @@ export default function BrickCard({
       style={{ "--tilt": `${tilt}deg` } as CSSProperties}
       className="flex aspect-[4/5] rotate-[var(--tilt)] flex-col justify-between rounded-2xl bg-brick p-5 text-[#f4ecde] ring-1 ring-black/15 shadow-[inset_0_1px_0_rgb(255_255_255/0.12),inset_0_-12px_22px_rgb(0_0_0/0.28),0_10px_22px_rgb(0_0_0/0.16)] transition-transform duration-300 hover:rotate-0 hover:scale-[1.02]"
     >
-      <h3 className="font-serif text-2xl font-bold leading-tight sm:text-[1.7rem]">
+      <h3 className="font-serif text-base font-bold leading-tight sm:text-lg">
         {splitCjk(title).map((run, i) =>
           run.cjk ? (
-            <span key={i} className="font-handwritten">
+            // Brush CJK reads smaller than Fraunces at the same point size;
+            // scale up for an optical (visual-size) match, not a point match.
+            <span
+              key={i}
+              className="align-baseline text-[1.2em] font-handwritten font-normal"
+            >
               {run.text}
             </span>
           ) : (

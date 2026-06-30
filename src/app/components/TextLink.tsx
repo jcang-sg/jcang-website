@@ -27,7 +27,7 @@ export default function TextLink({
     "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link",
     highlightOnly
       ? ""
-      : "underline decoration-link decoration-2 underline-offset-4",
+      : "underline decoration-link decoration-1 underline-offset-4",
   ]
     .filter(Boolean)
     .join(" ");
