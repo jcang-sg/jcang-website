@@ -1,12 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 /**
  * Light/dark switch that persists across visits via localStorage.
  * The initial class is set by an inline script in the layout to avoid flash.
+ * Hidden on the favourites page, which is always the brick treatment.
  */
 export default function ThemeToggle() {
+  const pathname = usePathname();
   const [dark, setDark] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -14,6 +17,8 @@ export default function ThemeToggle() {
     setDark(document.documentElement.classList.contains("dark"));
     setMounted(true);
   }, []);
+
+  if (pathname?.startsWith("/favourites")) return null;
 
   function toggle() {
     const next = !dark;

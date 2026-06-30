@@ -18,14 +18,14 @@ export default function WorldMapBackground({
   children: ReactNode;
 }) {
   const pathname = usePathname();
-  const strong = pathname?.startsWith("/favourites");
+
+  // The favourites page has its own brick-wall background, no world map.
+  if (pathname?.startsWith("/favourites")) return null;
 
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none fixed inset-0 z-0 text-[#2c5560] dark:text-[#9fb6bd] ${
-        strong ? "opacity-[0.16]" : "opacity-[0.11]"
-      }`}
+      className="pointer-events-none fixed inset-0 z-0 text-[#2c5560] opacity-[0.11] dark:text-[#9fb6bd]"
     >
       {children}
     </div>

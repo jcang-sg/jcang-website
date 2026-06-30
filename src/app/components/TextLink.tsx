@@ -15,10 +15,12 @@ export default function TextLink({
   href,
   children,
   highlightOnly = false,
+  reverseHighlight = false,
 }: {
   href: string;
   children: ReactNode;
   highlightOnly?: boolean;
+  reverseHighlight?: boolean;
 }) {
   const external = /^https?:\/\//.test(href);
 
@@ -38,7 +40,11 @@ export default function TextLink({
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-[-0.12em] top-1/2 h-[1.05em] -translate-y-1/2 overflow-hidden"
       >
-        <span className="block h-full w-full origin-left scale-x-0 bg-link/40 transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100" />
+        <span
+          className={`block h-full w-full scale-x-0 bg-link/40 transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100 ${
+            reverseHighlight ? "origin-right" : "origin-left"
+          }`}
+        />
       </span>
       <span className="relative">{children}</span>
     </>

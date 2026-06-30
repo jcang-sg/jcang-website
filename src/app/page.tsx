@@ -65,7 +65,7 @@ export default function Home() {
 
       {/* Favourites call-to-action */}
       <section className="mt-14 text-lg">
-        <TextLink href="/favourites">Some of my favourites →</TextLink>
+        Some of my <TextLink href="/favourites">favourites →</TextLink>
       </section>
 
       <Footer />

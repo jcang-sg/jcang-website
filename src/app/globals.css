@@ -14,7 +14,10 @@
   --link: #c49a4a; /* link hover gold */
   --card: #fbfaf1; /* warm card */
   --border: #dddbc8; /* oatmeal border */
-  --brick: #6e4f35; /* knorii brown — favourites cards */
+  --brick: #e2d3a6; /* light warm gold/sand — favourites card surface */
+  --brick-title: #2c5560; /* teal */
+  --brick-label: #6e4f35; /* muted brown (category + year) */
+  --brick-takeaway: #1f2a2e; /* body ink */
 }
 
 .dark {
@@ -26,7 +29,10 @@
   --link: #d8b36c;
   --card: #232d30;
   --border: #354042;
-  --brick: #8a6648; /* lighter brick */
+  --brick: #5e4e2b; /* deep muted gold/bronze — sits on the dark page */
+  --brick-title: #f4ecde; /* off-white */
+  --brick-label: #cfc6b2; /* muted light (category + year) */
+  --brick-takeaway: #ece4d6; /* light */
 }
 
 @theme inline {
@@ -39,6 +45,9 @@
   --color-card: var(--card);
   --color-border: var(--border);
   --color-brick: var(--brick);
+  --color-brick-title: var(--brick-title);
+  --color-brick-label: var(--brick-label);
+  --color-brick-takeaway: var(--brick-takeaway);
   --font-sans: var(--font-instrument);
   --font-serif: var(--font-fraunces);
   --font-mono: var(--font-jetbrains);
@@ -89,6 +98,12 @@ body {
 .page-peel:hover .page-peel-fold {
   width: 3.5rem;
   height: 3.5rem;
+}
+
+/* Favourites page: a solid dark walnut brown. A faint world-map watermark
+   (added in the page) provides the only texture. */
+.board {
+  background-color: #3a2719;
 }
 
 /* Dark mode only: soften the headshot's faint watercolour edge so the
