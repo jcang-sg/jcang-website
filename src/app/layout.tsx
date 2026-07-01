@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title,
     description,
     images: [
-      { url: "/og-image.png", width: 1200, height: 630, alt: siteName },
+      { url: "/og-image.png", width: 1200, height: 1200, alt: siteName },
     ],
   },
   twitter: {
