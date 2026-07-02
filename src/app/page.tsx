@@ -22,13 +22,16 @@ export default function Home() {
 
       {/* Bio */}
       <section className="mt-8 space-y-5 text-base leading-relaxed">
-        <p>I&apos;m a dad of three kids and a dog named Chestnut.</p>
+        <p>I&apos;m a dad of three kids and a furkid named Chestnut.</p>
         <p>
           For over a decade, I held commercial roles at{" "}
           <TextLink href="https://www.keppel.com/">Keppel</TextLink> and{" "}
           <TextLink href="https://www.esr.com/">ESR</TextLink>, connecting the
           hard infrastructure behind the internet, from data centres to subsea
-          cables. Then I joined{" "}
+          cables.
+        </p>
+        <p>
+          Then I joined{" "}
           <TextLink href="https://hiddenxp.com/">HIDDEN</TextLink>, a
           location-based entertainment studio, connecting the stories behind
           people, places and brand IPs.
@@ -42,9 +45,13 @@ export default function Home() {
           <TextLink href="https://www.instagram.com/p/DPs0i72kicz/">
             look
           </TextLink>
-          . After months of parenting-in-the-trenches, I now write a{" "}
-          <TextLink href="https://knorii.substack.com/">newsletter</TextLink>{" "}
-          featuring practical AI workflows for busy parents.
+          .
+        </p>
+        <p>
+          After months of parenting-in-the-trenches, I now co-write{" "}
+          <TextLink href="https://knorii.substack.com/">Sealion Scan</TextLink>:
+          each week, 1 wild story, 1 practical AI workflow and 3 world currents,
+          so we become world-wise parents together.
         </p>
         <p>
           You can follow my builder journey on{" "}
@@ -52,7 +59,7 @@ export default function Home() {
             Instagram
           </TextLink>
           ,{" "}
-          <TextLink href="https://www.linkedin.com/in/junchengang/">
+          <TextLink href="https://www.linkedin.com/in/jcang-sg/">
             LinkedIn
           </TextLink>{" "}
           and{" "}

@@ -11,7 +11,7 @@ export type Favourite = {
   takeaway?: string;
 };
 
-// Fourteen cards, chronological, grouped by life-season.
+// Fifteen cards, chronological, grouped by life-season.
 export const favourites: Favourite[] = [
   { season: "spring", title: "Jurassic Park", year: 1993, category: "Film series", takeaway: "Mosquitoes unlock imagination" },
   { season: "spring", title: "神雕侠侣", image: "/condor-heroes-book.jpg", year: 1996, category: "Novel comic", takeaway: "行侠仗义、爱恨情仇" },
@@ -21,6 +21,7 @@ export const favourites: Favourite[] = [
   { season: "summer", title: "叶问", year: 2008, category: "Film trilogy", takeaway: "没有怕老婆的男人，\n只有尊重老婆的男人" },
   { season: "summer", title: "3 Idiots", year: 2009, category: "Film", takeaway: "All izz well" },
   { season: "summer", title: "Suits", year: 2011, category: "Drama series", takeaway: "Bitter memories\ncan become bittersweet" },
+  { season: "summer", title: "SKY Castle", year: 2019, category: "Drama series", takeaway: "I know what mother likes,\nnot what I like" },
   { season: "summer", title: "The Last Dance", year: 2020, category: "Documentary", takeaway: "Collective pain,\nfocus and sacrifice" },
   { season: "summer", title: "Letter to Grandson Jun: I found myself, hiking!", image: "/letter-grandson-jun.jpg", year: 2022, category: "Book", takeaway: "Two things can be true at once" },
   { season: "summer", title: "邓紫棋 I Am Gloria", image: "/gem-i-am-gloria.png", year: 2025, category: "Live Concert", takeaway: "人生就是无数个美好、\n奇妙的时刻组成的" },

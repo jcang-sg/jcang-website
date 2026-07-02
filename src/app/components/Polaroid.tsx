@@ -12,14 +12,16 @@ const SEASON: Record<Season, { tape: string; well: string }> = {
   winter: { tape: "#a8c8d8", well: "#e1e6e3" },
 };
 
-// Render text with CJK runs in the hero brush font, scaled ~1.2x for an
-// optical (visual-size) match with the Latin glyphs.
-function withBrush(text: string) {
+// Render text with CJK runs in the hero brush font, scaled up for an optical
+// (visual-size) match with the Latin glyphs. Titles need a larger scale than
+// takeaways so a title-only CJK card reads the same size as an English title.
+function withBrush(text: string, scale = 1.2) {
   return splitCjk(text).map((run, i) =>
     run.cjk ? (
       <span
         key={i}
-        className="align-baseline text-[1.2em] font-handwritten font-normal"
+        className="align-baseline font-handwritten font-normal"
+        style={{ fontSize: `${scale}em` }}
       >
         {run.text}
       </span>
@@ -92,7 +94,7 @@ export default function Polaroid({
           />
         ) : (
           <h3 className="text-center font-serif text-base font-bold leading-snug text-[#1f2a2e]">
-            {withBrush(title)}
+            {withBrush(title, 1.55)}
           </h3>
         )}
       </div>

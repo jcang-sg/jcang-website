@@ -88,7 +88,7 @@ Redesigned from the earlier brick cards into taped polaroids pinned to a dark-wa
   - summer: tape accent #7CA82B, well #DADEBE
   - autumn: tape accent #D2691E, well #ECD6C0
   - winter: tape accent #A8C8D8, well #E1E6E3
-- A card shows a poster image in the well if `image` is provided (JC's own photos / original art only, per section 14.3); otherwise the centred title. Caption below: year (mono), category (uppercase, tracked), then the handwritten takeaway. CJK runs in titles and takeaways render in the brush font scaled about 1.2x. Some takeaways carry a deliberate two-line break (rendered whitespace-pre-line). Autumn and Winter are future-season placeholders with no year, their caption reads "to be lived".
+- A card shows a poster image in the well if `image` is provided (JC's own photos / original art only, per section 14.3); otherwise the centred title. Caption below: year (mono), category (uppercase, tracked), then the handwritten takeaway. CJK runs render in the brush font, scaled up for an optical match with the Latin glyphs: about 1.55x in titles (so a CJK title-only card reads the same size as an English title) and about 1.2x in takeaways. Some takeaways carry a deliberate two-line break (rendered whitespace-pre-line). Autumn and Winter are future-season placeholders with no year, their caption reads "to be lived".
 
 ```json
 {
@@ -101,6 +101,7 @@ Redesigned from the earlier brick cards into taped polaroids pinned to a dark-wa
     { "season": "summer", "year": 2008, "category": "Film trilogy", "title": "叶问", "takeaway": "没有怕老婆的男人，只有尊重老婆的男人" },
     { "season": "summer", "year": 2009, "category": "Film", "title": "3 Idiots", "takeaway": "All izz well" },
     { "season": "summer", "year": 2011, "category": "Drama series", "title": "Suits", "takeaway": "Bitter memories can become bittersweet" },
+    { "season": "summer", "year": 2019, "category": "Drama series", "title": "SKY Castle", "takeaway": "I know what mother likes, not what I like" },
     { "season": "summer", "year": 2020, "category": "Documentary", "title": "The Last Dance", "takeaway": "Collective pain, focus and sacrifice" },
     { "season": "summer", "year": 2022, "category": "Book", "title": "Letter to Grandson Jun: I found myself, hiking!", "image": "/letter-grandson-jun.jpg", "takeaway": "Two things can be true at once" },
     { "season": "summer", "year": 2025, "category": "Live Concert", "title": "邓紫棋 I Am Gloria", "image": "/gem-i-am-gloria.png", "takeaway": "人生就是无数个美好、奇妙的时刻组成的" },
@@ -132,9 +133,13 @@ Two 2025 summer cards order: 邓紫棋 I Am Gloria first, then The Daily Dad. Po
 
 ## 11. Content
 ### Bio (prose)
-I'm a dad of three kids and a dog named Chestnut. For over a decade, I held commercial roles at Keppel and ESR, connecting the hard infrastructure behind the internet, from data centres to subsea cables. Then I joined HIDDEN, a location-based entertainment studio, connecting the stories behind people, places and brand IPs.
+I'm a dad of three kids and a furkid named Chestnut. For over a decade, I held commercial roles at Keppel and ESR, connecting the hard infrastructure behind the internet, from data centres to subsea cables.
 
-My third little one is a wake-up call to be present and document these fleeting years, while maintaining the Airbender Aang look. After months of parenting-in-the-trenches, I now write a newsletter featuring practical AI workflows for busy parents.
+Then I joined HIDDEN, a location-based entertainment studio, connecting the stories behind people, places and brand IPs.
+
+My third little one is a wake-up call to be present and document these fleeting years, while maintaining the Airbender Aang look.
+
+After months of parenting-in-the-trenches, I now co-write Sealion Scan: each week, 1 wild story, 1 practical AI workflow and 3 world currents, so we become world-wise parents together.
 
 You can follow my builder journey on Instagram, LinkedIn and GitHub.
 
@@ -144,11 +149,11 @@ You can follow my builder journey on Instagram, LinkedIn and GitHub.
 - HIDDEN: https://hiddenxp.com/
 - document: https://www.youtube.com/@BotakBricks
 - look: https://www.instagram.com/p/DPs0i72kicz/
-- newsletter: https://knorii.substack.com/
+- Sealion Scan (newsletter): https://knorii.substack.com/
 
 ### Follow links
 - Instagram: https://www.instagram.com/skyvaulter19/
-- LinkedIn: https://www.linkedin.com/in/junchengang/
+- LinkedIn: https://www.linkedin.com/in/jcang-sg/
 - GitHub: https://github.com/jcang-sg
 
 ### Footer
