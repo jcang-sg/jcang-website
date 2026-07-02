@@ -27,7 +27,7 @@ export default function FavouritesPage() {
         </div>
       </div>
 
-      <main className="relative mx-auto flex max-w-md flex-col gap-10 px-6 py-20">
+      <main className="relative mx-auto flex max-w-md flex-col gap-10 px-6 pt-20">
         <nav className="text-lg text-[#f3e8dc]">
           <TextLink href="/" reverseHighlight>
             ← Back
@@ -53,6 +53,7 @@ export default function FavouritesPage() {
                 year={fav.year}
                 category={fav.category}
                 takeaway={fav.takeaway}
+                origins={fav.origins}
                 tilt={tilts[i % tilts.length]}
                 offset={offsets[i % offsets.length]}
               />
@@ -60,8 +61,12 @@ export default function FavouritesPage() {
           ))}
         </ul>
 
-        <Footer onDark />
       </main>
+
+      {/* Footer at the wider bio-page width so the sign-off fits one line. */}
+      <div className="relative mx-auto max-w-2xl px-6 pb-20">
+        <Footer onDark />
+      </div>
     </>
   );
 }

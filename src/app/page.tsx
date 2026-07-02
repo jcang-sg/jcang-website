@@ -49,9 +49,9 @@ export default function Home() {
         </p>
         <p>
           After months of parenting-in-the-trenches, I now co-write{" "}
-          <TextLink href="https://knorii.substack.com/">Sealion Scan</TextLink>:
-          each week, 1 wild story, 1 practical AI workflow and 3 world currents,
-          so we become world-wise parents together.
+          <TextLink href="https://knorii.substack.com/">Sealion Scan</TextLink>.
+          Each week I share 1 wild story, 1 practical AI workflow, and 3 world
+          currents, so we can know our kids, and the world, a little better.
         </p>
         <p>
           You can follow my builder journey on{" "}

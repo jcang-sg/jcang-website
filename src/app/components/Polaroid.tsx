@@ -12,6 +12,24 @@ const SEASON: Record<Season, { tape: string; well: string }> = {
   winter: { tape: "#a8c8d8", well: "#e1e6e3" },
 };
 
+// Country codes → flag emoji (regional-indicator pair) and a readable name for
+// the pin's aria-label.
+const COUNTRY: Record<string, string> = {
+  US: "USA",
+  HK: "Hong Kong",
+  SG: "Singapore",
+  JP: "Japan",
+  CN: "China",
+  GB: "the United Kingdom",
+  KR: "South Korea",
+  IN: "India",
+};
+
+const flagEmoji = (code: string) =>
+  code
+    .toUpperCase()
+    .replace(/./g, (c) => String.fromCodePoint(127397 + c.charCodeAt(0)));
+
 // Render text with CJK runs in the hero brush font, scaled up for an optical
 // (visual-size) match with the Latin glyphs. Titles need a larger scale than
 // takeaways so a title-only CJK card reads the same size as an English title.
@@ -45,6 +63,7 @@ export default function Polaroid({
   year,
   category,
   takeaway,
+  origins,
   tilt = 0,
   offset = 0,
 }: {
@@ -54,6 +73,7 @@ export default function Polaroid({
   year?: number;
   category?: string;
   takeaway?: string;
+  origins?: string[];
   tilt?: number;
   offset?: number;
 }) {
@@ -66,6 +86,22 @@ export default function Polaroid({
       }
       className="relative w-56 rounded-[3px] bg-[#fbfaf5] p-3 pb-5 shadow-[0_2px_4px_rgb(0_0_0/0.3),0_18px_30px_-8px_rgb(0_0_0/0.5)]"
     >
+      {/* Flag pin: country of origin, tucked at the top-right corner. */}
+      {origins && origins.length > 0 ? (
+        <span
+          aria-label={`From ${origins
+            .map((c) => COUNTRY[c] ?? c)
+            .join(" and ")}`}
+          className="absolute -right-2.5 -top-2.5 z-20 flex rotate-6 items-center gap-0.5 rounded-full border border-black/10 bg-[#fbfaf5] px-1.5 py-1 text-[0.95rem] leading-none shadow-[0_2px_5px_rgb(0_0_0/0.4)]"
+        >
+          {origins.map((c) => (
+            <span key={c} role="img" aria-hidden="true">
+              {flagEmoji(c)}
+            </span>
+          ))}
+        </span>
+      ) : null}
+
       {/* Duct tape: translucent matte black with a season-colour accent band. */}
       <span
         aria-hidden="true"

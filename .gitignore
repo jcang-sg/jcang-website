@@ -36,6 +36,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# private, never commit (editorial taste / voice notes)
+TASTE.private.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -88,24 +88,27 @@ Redesigned from the earlier brick cards into taped polaroids pinned to a dark-wa
   - summer: tape accent #7CA82B, well #DADEBE
   - autumn: tape accent #D2691E, well #ECD6C0
   - winter: tape accent #A8C8D8, well #E1E6E3
-- A card shows a poster image in the well if `image` is provided (JC's own photos / original art only, per section 14.3); otherwise the centred title. Caption below: year (mono), category (uppercase, tracked), then the handwritten takeaway. CJK runs render in the brush font, scaled up for an optical match with the Latin glyphs: about 1.55x in titles (so a CJK title-only card reads the same size as an English title) and about 1.2x in takeaways. Some takeaways carry a deliberate two-line break (rendered whitespace-pre-line). Autumn and Winter are future-season placeholders with no year, their caption reads "to be lived".
+- A card shows a poster image in the well if `image` is provided (JC's own photos / original art only, per section 14.3); otherwise the centred title. Caption below: year (mono), category (uppercase, tracked), then the handwritten takeaway. CJK runs render in the brush font, scaled up for an optical match with the Latin glyphs: about 1.55x in titles (so a CJK title-only card reads the same size as an English title) and about 1.2x in takeaways. Takeaway line breaks follow a rule: the text after a comma goes on the next line, so every comma starts a new line (a `\n` after the comma, rendered whitespace-pre-line). The JSON above keeps takeaways on one line for readability; apply the comma rule when rendering. Chinese takeaways follow the same rule at their ，/、 marks. Autumn and Winter are future-season placeholders with no year, their caption reads "to be lived".
+- Flag pin: a small cream rounded badge tucked at the card's top-right corner shows the work's country of origin as flag emoji, derived from `origins` (ISO 3166-1 alpha-2 codes). More than one code renders side by side when a work has mixed origins (神雕侠侣 is HK author + SG illustrator). Placeholders have no pin. Note: flag emoji do not render on Windows (they fall back to the two-letter code) — acceptable trade-off for keeping it asset-free.
 
 ```json
 {
   "favourites": [
-    { "season": "spring", "year": 1993, "category": "Film series", "title": "Jurassic Park", "takeaway": "Mosquitoes unlock imagination" },
-    { "season": "spring", "year": 1996, "category": "Novel comic", "title": "神雕侠侣", "image": "/condor-heroes-book.jpg", "takeaway": "行侠仗义、爱恨情仇" },
-    { "season": "spring", "year": 1997, "category": "Anime", "title": "Pokémon", "takeaway": "Stay cute or Evolve?" },
-    { "season": "spring", "year": 1998, "category": "Drama trilogy", "title": "还珠格格", "takeaway": "活得潇潇洒洒、把握青春年华" },
-    { "season": "spring", "year": 1999, "category": "PC Game series", "title": "Championship Manager 3", "takeaway": "Play to win, endless 4-1-3-2" },
-    { "season": "summer", "year": 2008, "category": "Film trilogy", "title": "叶问", "takeaway": "没有怕老婆的男人，只有尊重老婆的男人" },
-    { "season": "summer", "year": 2009, "category": "Film", "title": "3 Idiots", "takeaway": "All izz well" },
-    { "season": "summer", "year": 2011, "category": "Drama series", "title": "Suits", "takeaway": "Bitter memories can become bittersweet" },
-    { "season": "summer", "year": 2019, "category": "Drama series", "title": "SKY Castle", "takeaway": "I know what mother likes, not what I like" },
-    { "season": "summer", "year": 2020, "category": "Documentary", "title": "The Last Dance", "takeaway": "Collective pain, focus and sacrifice" },
-    { "season": "summer", "year": 2022, "category": "Book", "title": "Letter to Grandson Jun: I found myself, hiking!", "image": "/letter-grandson-jun.jpg", "takeaway": "Two things can be true at once" },
-    { "season": "summer", "year": 2025, "category": "Live Concert", "title": "邓紫棋 I Am Gloria", "image": "/gem-i-am-gloria.png", "takeaway": "人生就是无数个美好、奇妙的时刻组成的" },
-    { "season": "summer", "year": 2025, "category": "Book", "title": "The Daily Dad", "image": "/the-daily-dad.jpg", "takeaway": "Teach by example" },
+    { "season": "spring", "year": 1993, "category": "Film series", "title": "Jurassic Park", "takeaway": "Mosquitoes unlock imagination", "origins": ["US"] },
+    { "season": "spring", "year": 1996, "category": "Novel comic", "title": "神雕侠侣", "image": "/condor-heroes-book.jpg", "takeaway": "行侠仗义、爱恨情仇", "origins": ["HK", "SG"] },
+    { "season": "spring", "year": 1997, "category": "Anime", "title": "Pokémon", "takeaway": "Stay cute or Evolve?", "origins": ["JP"] },
+    { "season": "spring", "year": 1998, "category": "Drama trilogy", "title": "还珠格格", "takeaway": "活得潇潇洒洒、把握青春年华", "origins": ["CN"] },
+    { "season": "spring", "year": 1999, "category": "PC Game series", "title": "Championship Manager 3", "takeaway": "Play to win, endless 4-1-3-2", "origins": ["GB"] },
+    { "season": "spring", "year": 2002, "category": "Film trilogy", "title": "无间道", "takeaway": "出来混，迟早要还的。", "origins": ["HK"] },
+    { "season": "summer", "year": 2008, "category": "Film trilogy", "title": "叶问", "takeaway": "没有怕老婆的男人，只有尊重老婆的男人", "origins": ["HK"] },
+    { "season": "summer", "year": 2009, "category": "Film", "title": "3 Idiots", "takeaway": "All izz well", "origins": ["IN"] },
+    { "season": "summer", "year": 2011, "category": "Drama series", "title": "Suits", "takeaway": "A buddy makes bitter bittersweet", "origins": ["US"] },
+    { "season": "summer", "year": 2019, "category": "Drama series", "title": "SKY Castle", "takeaway": "I know what mother likes, not what I like", "origins": ["KR"] },
+    { "season": "summer", "year": 2020, "category": "Documentary", "title": "The Last Dance", "takeaway": "Collective pain to champions", "origins": ["US"] },
+    { "season": "summer", "year": 2021, "category": "Drama series", "title": "Itaewon Class", "takeaway": "Non-linear paths, one shared hunger", "origins": ["KR"] },
+    { "season": "summer", "year": 2022, "category": "Book", "title": "Letter to Grandson Jun: I found myself, hiking!", "image": "/letter-grandson-jun.jpg", "takeaway": "Two things can be true at once", "origins": ["SG"] },
+    { "season": "summer", "year": 2025, "category": "Live Concert", "title": "邓紫棋 I Am Gloria", "image": "/gem-i-am-gloria.png", "takeaway": "人生就是无数个美好、奇妙的时刻组成的", "origins": ["HK"] },
+    { "season": "summer", "year": 2025, "category": "Book", "title": "The Daily Dad", "image": "/the-daily-dad.jpg", "takeaway": "Teach by example", "origins": ["US"] },
     { "season": "autumn", "title": "Autumn" },
     { "season": "winter", "title": "Winter" }
   ]
@@ -139,7 +142,7 @@ Then I joined HIDDEN, a location-based entertainment studio, connecting the stor
 
 My third little one is a wake-up call to be present and document these fleeting years, while maintaining the Airbender Aang look.
 
-After months of parenting-in-the-trenches, I now co-write Sealion Scan: each week, 1 wild story, 1 practical AI workflow and 3 world currents, so we become world-wise parents together.
+After months of parenting-in-the-trenches, I now co-write Sealion Scan. Each week I share 1 wild story, 1 practical AI workflow, and 3 world currents, so we can know our kids, and the world, a little better.
 
 You can follow my builder journey on Instagram, LinkedIn and GitHub.
 
