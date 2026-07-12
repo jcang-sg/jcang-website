@@ -50,6 +50,7 @@ export default function FavouritesPage() {
                 season={fav.season}
                 title={fav.title}
                 image={fav.image}
+                imageScale={fav.imageScale}
                 year={fav.year}
                 category={fav.category}
                 takeaway={fav.takeaway}

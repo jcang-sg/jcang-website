@@ -60,6 +60,7 @@ export default function Polaroid({
   season,
   title,
   image,
+  imageScale = 1,
   year,
   category,
   takeaway,
@@ -70,6 +71,7 @@ export default function Polaroid({
   season: Season;
   title: string;
   image?: string;
+  imageScale?: number;
   year?: number;
   category?: string;
   takeaway?: string;
@@ -127,6 +129,7 @@ export default function Polaroid({
             sizes="224px"
             loading="eager"
             className="object-cover"
+            style={imageScale !== 1 ? { transform: `scale(${imageScale})` } : undefined}
           />
         ) : (
           <h3 className="text-center font-serif text-base font-bold leading-snug text-[#1f2a2e]">

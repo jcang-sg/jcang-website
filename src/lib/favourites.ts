@@ -5,6 +5,9 @@ export type Favourite = {
   title: string;
   // Optional poster image for the photo well (replaces the title text).
   image?: string;
+  // Optional zoom for the poster image (1 = fill the well). >1 magnifies and
+  // crops toward the centre; used to fill dead space on loosely-framed photos.
+  imageScale?: number;
   // Absent on the future-season placeholder cards (Autumn, Winter).
   year?: number;
   category?: string;
@@ -14,7 +17,7 @@ export type Favourite = {
   origins?: string[];
 };
 
-// Seventeen cards, chronological, grouped by life-season.
+// Eighteen cards, chronological, grouped by life-season.
 export const favourites: Favourite[] = [
   { season: "spring", title: "Jurassic Park", year: 1993, category: "Film series", takeaway: "Mosquitoes unlock imagination", origins: ["US"] },
   { season: "spring", title: "神雕侠侣", image: "/condor-heroes-book.jpg", year: 1996, category: "Novel comic", takeaway: "行侠仗义、爱恨情仇", origins: ["HK", "SG"] },
@@ -31,6 +34,7 @@ export const favourites: Favourite[] = [
   { season: "summer", title: "Letter to Grandson Jun: I found myself, hiking!", image: "/letter-grandson-jun.jpg", year: 2022, category: "Book", takeaway: "Two things can be true at once", origins: ["SG"] },
   { season: "summer", title: "邓紫棋 I Am Gloria", image: "/gem-i-am-gloria.png", year: 2025, category: "Live Concert", takeaway: "人生就是无数个美好、\n奇妙的时刻组成的", origins: ["HK"] },
   { season: "summer", title: "The Daily Dad", image: "/the-daily-dad.jpg", year: 2025, category: "Book", takeaway: "Teach by example", origins: ["US"] },
+  { season: "summer", title: "The Diary of a CEO", image: "/diary-of-a-ceo.jpg", imageScale: 1.15, year: 2026, category: "Book", takeaway: "Self, Story, Philosophy, Team", origins: ["GB"] },
   { season: "autumn", title: "Autumn" },
   { season: "winter", title: "Winter" },
 ];

@@ -37,21 +37,22 @@ export default function Home() {
           people, places and brand IPs.
         </p>
         <p>
-          My third little one is a wake-up call to be present and{" "}
+          My third little one woke me up to slow down, be present. So I started{" "}
           <TextLink href="https://www.youtube.com/@BotakBricks">
-            document
+            Botak Bricks
           </TextLink>{" "}
-          these fleeting years, while maintaining the Airbender Aang{" "}
+          to capture these fleeting years and their growing confidence, Airbender
+          Aang{" "}
           <TextLink href="https://www.instagram.com/p/DPs0i72kicz/">
             look
-          </TextLink>
-          .
+          </TextLink>{" "}
+          and all.
         </p>
         <p>
           After months of parenting-in-the-trenches, I now co-write{" "}
           <TextLink href="https://knorii.substack.com/">Sealion Scan</TextLink>.
           Each week I share 1 wild story, 1 practical AI workflow, and 3 world
-          currents, so we can know our kids, and the world, a little better.
+          currents, so we can know our kids and the world, a little better.
         </p>
         <p>
           You can follow my builder journey on{" "}
